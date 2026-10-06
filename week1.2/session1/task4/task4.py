@@ -9,9 +9,8 @@ both = fruit.intersection(vegetables)
 print(both)
 
 # Why does the following code diplay five items?
-
-food = fruit.union(vegetables)
-print(food)
+foods = fruit.union(vegetables)
+print(foods)
 
 # Add an item to fruit
 fruit.add("banana")

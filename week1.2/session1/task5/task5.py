@@ -9,10 +9,10 @@ rivers = {
 print(rivers)
 
 # Add two new entries to the rivers database
-rivers.update({ 
-    'Yangtze': 'China', 
-    'York': 'Ouse' 
-}) 
+rivers.update ({
+   "York" : "Ouse",
+   "China" : "Yangtze" 
+})
 
 print(rivers)
 
@@ -27,4 +27,9 @@ print(rivers.items())
 
 # Delete an entry from the rivers database
 rivers.pop("York")
+print(rivers)
+
+# Additional Work
+rivers["China"] = ["Yangtze River"]
+rivers["China"].append("Yellow River")
 print(rivers)

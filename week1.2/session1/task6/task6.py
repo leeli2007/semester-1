@@ -21,3 +21,10 @@ pprint(favorite_music)
 # Display details of one album recorded by a specific artist
 v = favorite_music["album"]
 print(v)
+
+# Additional Work
+favorite_music["album"] ={
+    "name":  "Jay Chou's Bedtime Stories",
+    "release_year": 2016,
+}
+print(favorite_music)
