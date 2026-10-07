@@ -1,14 +1,14 @@
 # Worksheet 1.2: Task 2 Solution
 import sys 
+from util import read_numbers
 
+nums = []
 try:
-    ip = input("Input a sequence of float values: ") 
-    words = ip.split(",")
-    nums = []
-    for s in words:
-        nums.append(float(s))
-
+    nums = read_numbers()
 except ValueError:    
+    sys.exit("Error: no numbers provided") 
+
+if len(nums) == 0:
     sys.exit("Error: no numbers provided") 
 
 sorted_nums = sorted(nums)
