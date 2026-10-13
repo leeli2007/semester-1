@@ -4,10 +4,45 @@
 
 # ask for filename of the student file
 
-# open the file
+import csv
 
+file_name = input().strip()
+
+# open the file
+with open(file_name,'r') as infile: 
+   with open(file_name+"_out.csv",'w') as outfile:
 # read in the data, and for each student calculate their average grade and classification
 
+      res = ""
+      next(infile)
+      for line in infile:
+         result = line.strip().split(',')
+         cleaned_result = [item for item in result if item != ''] 
+         print(cleaned_result)
+
+         sum = 0
+         print(len(cleaned_result))
+         for i in range(1,len(cleaned_result)):
+            sum += int(result[i])
+         avg = sum / (len(cleaned_result) - 1 ) 
+        
+         grade = -1
+         if avg >= 70:
+            grade = '1'
+         elif avg >= 60:
+            grade = "2:1"
+         elif avg >= 50:
+            grade = "2:2"
+         elif avg >= 40:
+            grade = "3"
+         else:
+            grade = 'F'
+         print(str(format(avg,'.2f')),sum,grade)
+
+         res = result[0]+','+ str(format(avg,'.2f')) + ',' +grade+"\n"
+         outfile.write(res)
+
+      
 
 
 # write out this calculated data in the format without a header:
