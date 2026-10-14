@@ -18,7 +18,6 @@ with open(file_name,'r') as infile:
       for line in infile:
          result = line.strip().split(',')
          cleaned_result = [int(item) for item in result if len(item) != 0 and item.isdigit()] 
-         print(cleaned_result)
          avg = sum(cleaned_result) / len(cleaned_result)
         
          grade = -1
@@ -32,14 +31,11 @@ with open(file_name,'r') as infile:
             grade = "3"
          else:
             grade = 'F'
-         print(str(format(avg,'.2f')),sum,grade)
 
          res = result[0]+','+ str(format(avg,'.2f')) + ',' +grade+"\n"
          outfile.write(res)
 
       
-
-
 # write out this calculated data in the format without a header:
 #      student_id,average_grade,classification - replace this with actual value
 #      The average grade should be given to 2 decimal places
