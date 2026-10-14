@@ -17,14 +17,9 @@ with open(file_name,'r') as infile:
       next(infile)
       for line in infile:
          result = line.strip().split(',')
-         cleaned_result = [item for item in result if item != ''] 
+         cleaned_result = [int(item) for item in result if len(item) != 0 and item.isdigit()] 
          print(cleaned_result)
-
-         sum = 0
-         print(len(cleaned_result))
-         for i in range(1,len(cleaned_result)):
-            sum += int(result[i])
-         avg = sum / (len(cleaned_result) - 1 ) 
+         avg = sum(cleaned_result) / len(cleaned_result)
         
          grade = -1
          if avg >= 70:
