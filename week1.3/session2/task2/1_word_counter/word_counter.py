@@ -15,3 +15,13 @@
 # story.txt - 290
 # story2.txt - 326
 # glasses.txt - 210
+
+file_name = input()
+count = 0
+with open(file_name,'r') as inFile:
+    for v in inFile:
+        if len(v) > 1:
+            temp = v.strip().split(" ")
+            count += len(temp)
+
+print(f"{file_name} - {count}")
