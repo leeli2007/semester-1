@@ -26,15 +26,3 @@ with open('user_info.txt' , 'w') as outFile:
 
         temp = name + ' ' + age + ' ' + favourite_color + "\n"
         outFile.write(temp) 
-with open('user_info.txt' , 'w') as outFile:
-    while True:
-        print("Please enter your name, age, and favourite colour,quit to exit")
-        name = input().strip()
-        age = input().strip()
-        favourite_color = input().strip()
-
-        if name == "quit" or age == "quit" or favourite_color == "quit":
-            break
-
-        temp = name + ' ' + age + ' ' + favourite_color + "\n"
-        outFile.write(temp) 
