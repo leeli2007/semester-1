@@ -23,10 +23,10 @@ fileName = "../images/" + fileName
 
 try:
     with open(fileName, 'r') as inFile:
-        with open("Inverted_Image.pgm", 'w') as outFile:
-            title = inFile.readline().strip() + "\n"
+        with open("../images/Inverted_Image.pgm", 'w') as outFile:
+            title = inFile.readline()
             outFile.write(title)
-            dimensions = inFile.readline().strip() + "\n"
+            dimensions = inFile.readline()
             outFile.write(dimensions)
             maximum_gray_value = inFile.readline().strip()
             outFile.write(maximum_gray_value + "\n")
