@@ -23,40 +23,45 @@ fileName = "../images/" + fileName
 try:
     with open(fileName,'r') as inFile:
         next(inFile)
-        line = inFile.readline().split("#")[0].strip()
-        while line == "":
-            line = inFile.readline().split("#")[0].strip()
-        widths_heights = line.split()
 
-        line = inFile.readline().split("#")[0].strip()
-        while line == "":
-            line = inFile.readline().split("#")[0].strip()
-        max_gray_value = int(line)
+        while True:
+            aline = inFile.readline().lstrip()
+            if len(aline) > 0 and aline[0] != "#":
+                break
+        widths_heights = aline.split()
 
-        width_flag = True
-        height_flag = 0
+        while True:
+            aline = inFile.readline().lstrip()
+            if len(aline) > 0 and aline[0] != "#":
+                break
+        max_gray_value = int(aline)
+
+  
+        height_count = 0
         gray_value_flag = True
+        width,height = int(widths_heights[0]), int(widths_heights[1])
 
         for v in inFile:
-            temp = v.split()
-            height_flag += 1
+            pixel = v.split()
+            height_count += 1
 
-            if int(widths_heights[0]) != len(temp):
-                width_flag = False
+            if int(width) != len(pixel):
+                print("invalid width")
+                break
 
-            for v in temp:
+            for v in pixel:
                 if int(v) < 0 or int(v) > max_gray_value:
                     gray_value_flag = False
-
-        if width_flag == True and height_flag == int(widths_heights[1]) and gray_value_flag == True:
-            print("Valid image")
+                    break
+            if not gray_value_flag:
+                print("invalid pixel")
+                break
+             
         else:
-            if width_flag == False:
-                print("Invalid width")
-            if height_flag != int(widths_heights[1]):
-                print("Invalid height")
-            if gray_value_flag != True:
-                print("Invalid pixel values")
+            if height_count != height:
+                print("invalid height")
+            else:
+                print("valid image")
 
 except FileNotFoundError:
     print("File not found")
