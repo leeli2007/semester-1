@@ -16,12 +16,16 @@
 # story2.txt - 326
 # glasses.txt - 210
 
-file_name = input()
+file_name = input("Enter file name:")
 count = 0
-with open(file_name,'r') as inFile:
-    for v in inFile:
-        if len(v) > 1:
-            temp = v.strip().split(" ")
-            count += len(temp)
+try:
+    with open(file_name,'r') as inFile:
+        for line in inFile:
+            if len(line) > 1:
+                temp = line.strip().split(" ")
+                count += len(temp)
 
-print(f"{file_name} - {count}")
+    print(f"{file_name} - {count}")
+except FileNotFoundError:
+    print("File not found")
+

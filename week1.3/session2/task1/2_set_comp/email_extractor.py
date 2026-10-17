@@ -5,7 +5,7 @@ raw_emails = ["UserA@gmail.com", "admin@site.com", "usera@gmail.com", "UserB@yah
 
 # set comprehension to extract a clean, unique set of lowercase email addresses
 
-low_result = [mail.lower() for mail in raw_emails]
+low_result = {mail.lower() for mail in raw_emails}
 
 # print the clean set of email addressed
 
@@ -16,5 +16,5 @@ print(low_result)
 # write another set comprehension for this case to extract a clean, unique set of valid, lowercase email addresses
 
 raw_emails2 = ["UserA@gmail.com", "SYSTEM_ALERT", "usera@gmail.com", "admin@site.com", "UserB@yahoo.com"]
-correct_low_result = [mail for mail in raw_emails2 if '@' in mail]
+correct_low_result = {mail1.lower() for mail1 in raw_emails2 if '@' in mail1}
 print(correct_low_result)

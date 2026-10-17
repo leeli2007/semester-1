@@ -5,10 +5,8 @@ home_sensors = {"Living Room Thermostat": 85, "Front Door Lock": 15, "Kitchen Sm
 # dictionary comprehension to filter all sensors with battery level less than 20
 # Expected Output: {'Front Door Lock': 15, 'Basement Flood Sensor': 8}
 
-warn_sensors = {}
-for v in home_sensors:
-    if home_sensors[v] < 20:
-        warn_sensors[v] = home_sensors[v]
+
+warn_sensors = {k:v for k,v in home_sensors.items() if v < 20}
 
 print(warn_sensors)
 
