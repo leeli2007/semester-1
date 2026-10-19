@@ -16,8 +16,13 @@ def isBond(intList):
     # meaning you need to delete pass to write your code.
     # Nothing happens when pass is executed.
 
-    pass     # delete pass to write your code
-
+    # delete pass to write your code
+    arr = iter(intList)
+    if 0 in arr and 0 in arr and 7 in arr:
+        return True
+    else:
+        return False
+    
 # Check if the following lines of code produce the correct output
 print(isBond([1, 2, 4, 0, 0, 7, 5]))   # True
 print(isBond([1, 0, 2, 4, 0, 5, 7]))   # True
