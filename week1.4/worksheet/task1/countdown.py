@@ -6,4 +6,7 @@ def countdown(number):
     ''' 
 
     print(number) 
-    countdown(number-1) 
+    if number > 0:
+        countdown(number-1) 
+
+countdown(10)

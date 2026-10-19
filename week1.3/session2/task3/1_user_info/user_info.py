@@ -14,15 +14,15 @@
 # Optional: extend this by using a loop to allow multiple people to enter their info in a row
 # If you want multiple people to add info without overwriting, consider append mode 'a'
 
-with open('user_info.txt' , 'w') as outFile:
-    while True:
-        print("Please enter your name, age, and favourite colour,quit to exit")
-        name = input().strip()
-        age = input().strip()
-        favourite_color = input().strip()
+try:
+    with open('user_info.txt' , 'a') as outFile:
+        while True:
+            print("Please enter your name, age, and favourite colour,seperate by space enter quit to exit")
+            information = input().strip().split()
+            if len(information)==0 or information[0] == "quit" :
+                break
 
-        if name == "quit" or age == "quit" or favourite_color == "quit":
-            break
-
-        temp = name + ' ' + age + ' ' + favourite_color + "\n"
-        outFile.write(temp) 
+            temp = information[0] + ' ' + information[1] + ' ' + information[2] + "\n"
+            outFile.write(temp) 
+except:
+    print("Error")

@@ -17,32 +17,37 @@ sales_data = []
 region = {}
 total_sales = {}
 region_widget={}
-with open('sales.csv','r') as inFile:
-    next(inFile)
-    for v in inFile:
-        words = v.strip().split(',')
-        sales_data.append([words[0],words[1],int(words[2]),int(words[3]),words[4]])
+
+try:
+    with open('sales.csv','r') as inFile:
+        next(inFile)
+        for v in inFile:
+            words = v.strip().split(',')
+            sales_data.append([words[0],words[1],int(words[2]),int(words[3]),words[4]])
  
-for words in sales_data:
-    if words[2]> largest_sale:
-        largest_sale = words[2]
-        largest_sale_day = words[0]
-    sum_sale_amount += words[2]
+    for words in sales_data:
+        if words[2]> largest_sale:
+            largest_sale = words[2]
+            largest_sale_day = words[0]
+        sum_sale_amount += words[2]
 
-    widget[words[1]] = widget.get(words[1],0) + words[3]
-    total_sales[words[1]] = total_sales.get(words[1],0) + words[2]
-    region[words[-1]] = region.get(words[-1],0) + words[2]
+        widget[words[1]] = widget.get(words[1],0) + words[3]
+        total_sales[words[1]] = total_sales.get(words[1],0) + words[2]
+        region[words[-1]] = region.get(words[-1],0) + words[2]
 
-    sale_weiget = region_widget.get(words[-1],{})
-    sale_weiget[words[1]] = sale_weiget.get(words[1],0) + words[2]
-    region_widget [words[-1]] = sale_weiget
-    
-most_widget = max(widget.values())
-avg_sale_amount = sum_sale_amount / len(sales_data)
-print(f"Largest sale day is {largest_sale_day},average sale amount is {avg_sale_amount}, most sold widget is {max(widget.items(), key=lambda x: x[1])}")
-print(region)
-print(total_sales)
-print(region_widget)
+        sale_weiget = region_widget.get(words[-1],{})
+        sale_weiget[words[1]] = sale_weiget.get(words[1],0) + words[2]
+        region_widget [words[-1]] = sale_weiget
+        
+    most_widget = max(widget.values())
+    avg_sale_amount = sum_sale_amount / len(sales_data)
+    print(f"Largest sale day is {largest_sale_day},average sale amount is {avg_sale_amount}, most sold widget is {max(widget.items(), key=lambda x: x[1])}")
+    print(region)
+    print(total_sales)
+    print(region_widget)
+
+except:
+    print("Error")
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region
 # - most sold widget for each region

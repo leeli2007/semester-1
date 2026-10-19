@@ -1,1 +1,4 @@
 lee 19 blue
+jack 18 red
+lily 20 pink
+laura 16 yellow

@@ -46,7 +46,7 @@ try:
             height_count += 1
 
             if int(width) != len(pixel):
-                print("invalid width")
+                print("Invalid width")
                 break
 
             for v in pixel:
@@ -54,14 +54,14 @@ try:
                     gray_value_flag = False
                     break
             if not gray_value_flag:
-                print("invalid pixel")
+                print("Invalid pixel values")
                 break
              
         else:
             if height_count != height:
-                print("invalid height")
+                print("Invalid height")
             else:
-                print("valid image")
+                print("Valid image")
 
 except FileNotFoundError:
     print("File not found")
