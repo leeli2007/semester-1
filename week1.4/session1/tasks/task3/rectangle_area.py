@@ -3,7 +3,7 @@
 
 def rectangle_area(bottom,height):               # define suitable input data
                                                  # implement the function
-    return 0.5*int(bottom)*int(height)           # return an appropriate value
+    return int(bottom)*int(height)           # return an appropriate value
 
 # testing the function
 

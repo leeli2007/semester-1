@@ -65,3 +65,6 @@ run_program()
 
 #    If you are to split each task into a separate function, how would you
 #   name the function for each of these tasks?
+'''
+Use operation name as name of the function.
+'''

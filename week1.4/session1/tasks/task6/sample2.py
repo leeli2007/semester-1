@@ -8,6 +8,9 @@ def add_two_numbers(num1, num2):
     num1 = float(num1)
     num2 = float(num2)
     return (num1 + num2)     # What happen if you remove the parenthesis ()?
+'''
+Parentheses around an expression in return don't affect the result
+'''
 
 
 # Check if the following lines produce the correct output
@@ -20,3 +23,6 @@ print(add_two_numbers("3", "4"))
 
 # What happens if you try this? Uncomment the code to find out.
 #print(add_two_numbers("three", "four"))
+'''
+String can't convert to float.
+'''

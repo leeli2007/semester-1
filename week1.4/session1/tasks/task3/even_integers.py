@@ -2,10 +2,8 @@
 # function implementation
 
 def even_num(num):
-    even_nums = []
-    for i in range(int(num)+1):
-        if i % 2 == 0:
-            even_nums.append(i)
+
+    even_nums = [i for i in range(int(num)+1) if i % 2 == 0]
 
     return even_nums
 

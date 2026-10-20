@@ -19,3 +19,7 @@ age = int(input("Enter your age: "))
 check_vote_eligibility(age)
 
 # what is the return value from check_vote_eligibility?
+'''
+    Check if the user is 18 or over, print("You are eligible to vote.")
+    else print("You are not eligible to vote yet.")
+'''

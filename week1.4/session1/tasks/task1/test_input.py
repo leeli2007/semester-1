@@ -1,0 +1,1 @@
+ip = input("Hello world!")

@@ -9,6 +9,7 @@
 
 
 def process_data(data):
+
     """
     Processes a list of integers and returns the sum of all values.
     If the list is empty, it returns None.
@@ -19,8 +20,9 @@ def process_data(data):
     Returns:
         int: The sum of all integers in the list or None if empty.
     """
+
     if not data:
-        return 0
+        return None
     return sum(data)
 
 # What is output from the following line of code?
