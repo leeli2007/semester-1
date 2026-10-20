@@ -24,11 +24,13 @@ def currency_converter(amount, from_currency, to_currency):
     if from_currency not in conversion_rate or to_currency not in conversion_rate[from_currency]:
         return None
 
+    if amount < 0:
+        return 0.0 
+    
     rate = conversion_rate[from_currency][to_currency]
 
-    return f"{amount * rate:.2f}"
+    return amount * rate
 
 # Submit only this file currency_converter.py with the completed function.
 
 # Remove any additional code you may have added during development and testing.
-print(currency_converter(100,'GBP','CNY'))
