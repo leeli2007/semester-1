@@ -17,7 +17,8 @@ print(calendar.month(2025, 10))
 # namely the w and l parameters. Write code to made two more function calls
 # to the month function with different values of w and l and observe the
 # output.
-
+print(calendar.month(2025, 10, w=4))
+print(calendar.month(2025, 10, w=3, l=2))
 
 # While at https://docs.python.org/3/library/calendar.html, explore
 # the calendar function(calendar.calendar, yes the function is called
@@ -28,3 +29,10 @@ print(calendar.month(2025, 10))
 # Your task is to write code to make 3 functions calls to the calendar
 # function with different values to the optional arguments (w, l, c, and m).
 # Display the output to observe the differences.
+print(calendar.calendar(2025))
+
+print(calendar.calendar(2025, c=3, m=4))
+
+print(calendar.calendar(2025, w=3, l=2, c=8, m=2))
+
+print(calendar.calendar(2025, m=1))

@@ -20,7 +20,24 @@ def most_frequent_string(votes):
     # Your task is to complete the body of the function based on the details in the docstring.
     # Hint 1: You can complete this task with for loops or comprehensions 
     # Hint 2: Think about the properties of the various collection-types
+    if len(votes) == 0:
+        return None,None
 
+    counts = {}
+    for str in votes:
+        if str in counts:
+            counts[str] += 1
+        else:
+            counts[str] = 1
+
+    str = ''
+    count = 0
+    for str1,count1 in counts.items():
+        if count1 > count:
+            str = str1
+            count = count1
+
+    return str,count
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
          'date', 'elderberry', 'elderberry', 'date', 'banana']
