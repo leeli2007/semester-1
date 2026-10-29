@@ -27,10 +27,12 @@ class Person:
     # (see README.md for further details)
 
     def initials(self):
-        chars = self.split()
+        chars = self.name.split()
         ans = ""
         for char in chars:
-            ans += char[1]
+            ans += char[0]
+
+        return ans.upper()
 
     def is_birthday(self):
         today = date.today()
@@ -39,3 +41,4 @@ class Person:
             return True
         else:
             return False
+
