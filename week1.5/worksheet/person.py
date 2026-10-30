@@ -11,6 +11,9 @@ class Person:
     # birth fields (see README.md for further details)
 
     def __init__(self,name,birth):
+        '''
+        Create a person,given name and birth 
+        '''
         if not isinstance(name,str):
             raise TypeError("Name must be a string")
 
@@ -18,7 +21,7 @@ class Person:
             raise TypeError("Birth must be date")
 
         if name == "":
-            raise TypeError("Name is empty")
+            raise ValueError("Name is empty")
 
         self.name = name
         self.birth = birth

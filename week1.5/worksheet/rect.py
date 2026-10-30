@@ -29,6 +29,9 @@ class Rectangle:
     # Implement methods is_square(), area() & perimeter() here
     # (See README.md for details of what they should do)
     def is_square(self):
+        '''
+        Check if the pattern is square or rectangular
+        '''
         if self.width == self.height:
             return True
         else:
