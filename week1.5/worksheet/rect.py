@@ -38,7 +38,13 @@ class Rectangle:
             return False
 
     def area(self):
+        '''
+        Calc pattern area
+        '''
         return self.width * self.height
 
     def perimeter(self):
+        '''
+        Calc pattern perimeter
+        '''
         return self.width * 2 + self.height * 2    

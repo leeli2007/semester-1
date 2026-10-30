@@ -30,6 +30,9 @@ class Person:
     # (see README.md for further details)
 
     def initials(self):
+        '''
+        Create a person,get first char 
+        '''
         chars = self.name.split()
         ans = ""
         for char in chars:
@@ -38,6 +41,9 @@ class Person:
         return ans.upper()
 
     def is_birthday(self):
+        '''
+        Create a person,check today is birthday or not
+        '''
         today = date.today()
 
         if self.birth.month == today.month and self.birth.day == today.day:
