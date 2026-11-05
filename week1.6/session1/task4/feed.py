@@ -1,6 +1,7 @@
 # Week 1.6, Session 1: Task 4
 
 import csv
+from datetime import datetime
 from urllib.request import urlopen
 
 VALID_LEVELS = {"all", "1.0", "2.5", "4.5", "significant"}
@@ -44,3 +45,4 @@ class QuakeFeed:
         with urlopen(self.url) as source:
             lines = [line.decode() for line in source]
         return csv.DictReader(lines)
+
