@@ -47,3 +47,26 @@ def test_valid_add():
     m2 = Money(0, 54)
 
     assert str(m1 + m2) == "£2.04"
+
+def test_constr():
+    with pytest.raises(TypeError)  as tperr:
+        Money(1.0,50)
+    assert str(tperr.value) == "pounds must be an integer"
+
+    with pytest.raises(TypeError) as tperr:
+        Money(1,0.50)
+    assert str(tperr.value) == "pence must be an integer"
+
+    with pytest.raises(ValueError) as tperr:
+        Money(-5,0)
+    assert str(tperr.value) == "pounds must be >= 0"
+
+    with pytest.raises(ValueError) as tperr:
+        Money(5,100)
+    assert str(tperr.value) == "pence must be in range 0-99"
+
+def test_add():
+    m1 = Money(1,50)
+    with pytest.raises(TypeError) as tperr:
+        m1 + 2
+    assert str(tperr.value) == "Must add money"

@@ -6,6 +6,7 @@
 # Then write a test_ok() function that tests the other equivalence class
 
 from weather import comfort_level
+import pytest
 
 def test_cold():
     assert comfort_level(  15.0  ) == "COLD"
@@ -19,6 +20,13 @@ def test_ok():
     assert comfort_level( 20.0 ) == "OK"
     assert comfort_level( 25.0 ) == "OK"
 
-test_cold()
-test_hot()
-test_ok()
+def test_sum():
+    assert (0.1 + 0.2) == pytest.approx(0.3)
+
+def myfunc():
+    raise ValueError("Exception 123 raised")
+
+def test_myfunc():
+    with pytest.raises(ValueError) as err:
+        myfunc()
+    assert str(err.value) =="Exception 1234 raised"
