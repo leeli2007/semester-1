@@ -36,11 +36,17 @@ print(temp_data)
 # use pandas to convert data to  dataframe
 
 df = pd.DataFrame(temp_data)
+print(df)
 
 # using matplotlib plot the 3 data sets: (tempmin,temp,tempmax) as line graphs
+# convert temperature from Farenheit (F) to Celcius (C)
+df['tempmax'] = (df['tempmax'] - 32) * 5 / 9
+df['tempmin'] = (df['tempmin'] - 32) * 5 / 9
+df['temp'] = (df['temp'] - 32) * 5 / 9
 
-df.plot()
-
+df[['tempmin', 'temp', 'tempmax']].plot()
+plt.xlabel("Day")
+plt.ylabel("Temperature (C)")
 plt.show()
 
 # annotate the graph with axis labels
