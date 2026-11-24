@@ -7,7 +7,7 @@
 -- To see all the tables in a database
 .tables
 
--- To see the attributes belonging to each table
+-- To see the attributes belonging to each table478900
 .schema customers
 
 -- And to see a count of the total number of tuples

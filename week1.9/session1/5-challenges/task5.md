@@ -17,7 +17,6 @@ Start wherever suits you, and come back to finish off anything you missed in you
 
 4. How many customers does Leeds Eats have?
 
-
 ## Silver: requests from customers and staff
 
 5. **A student:** "I'm vegetarian and I've only got £8. What could I order? Cheapest first, please."
@@ -30,8 +29,10 @@ Start wherever suits you, and come back to finish off anything you missed in you
 
 9. **The operations manager:** "Show me the 10 most recent cancelled orders."
 
-10. **The owner of Pasta Pronto (restaurant 4):** "Which of my dishes are vegetarian? And what's my most expensive dish?" (Two queries.)
-
+10. **The owner of Pasta Pronto (restaurant 4):** "Which of my dishes 
+SELECT name, price FROM menu_items
+WHERE restaurant_id = 4 AND is_vegetarian = 1
+ORDER BY price ASC;
 
 ## Gold: think it through
 
@@ -43,6 +44,9 @@ Start wherever suits you, and come back to finish off anything you missed in you
        SELECT name, price FROM menu_items WHERE is_vegetarian = 1 LIMIT 5;
    
    Explain what's wrong with each, then write a correct version.
+   
+** WHERE must placed before ORDER and LIMIT
+** Vegetarian dishes are not ordered, return 5 vegetarian dishes in random not the lowest priced 5.
 
 13. **A customer:** "What's the cheapest thing I can get on Leeds Eats?" Write the query. Then run it again with LIMIT 5 instead of LIMIT 1. What do you notice, and how should Leeds Eats answer this customer fairly?
 
