@@ -41,9 +41,23 @@ WHERE restaurant_id = 4
 ORDER BY price DESC
 LIMIT 1;
 
+SELECT  order_id, status, order_time FROM orders
+WHERE status = 'placed' AND order_time LIKE '2026-10%';
 
 SELECT name, price
 FROM menu_items
 WHERE is_vegetarian = 1
 ORDER BY price ASC
 LIMIT 5;
+
+SELECT restaurant_id, name, price FROM menu_items
+ORDER BY price ASC
+LIMIT 1;
+SELECT restaurant_id, name, price FROM menu_items
+ORDER BY price ASC
+LIMIT 5;
+
+SELECT COUNT(*) AS order_num FROM orders
+WHERE (order_time LIKE '% 21:%' OR order_time LIKE '% 22:%' OR
+order_time LIKE '% 23:%' OR order_time LIKE '% 00:%') AND status = 'delivered';
+

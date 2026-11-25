@@ -9,6 +9,18 @@
 
 -- To see the attributes belonging to each table478900
 .schema customers
+.schema restaurants
+.schema menu_items
+.schema drivers
+.schema orders
+.schema order_items
+.schema reviews
 
 -- And to see a count of the total number of tuples
-SELECT COUNT(*) as Cardinality FROM customers; 
+SELECT COUNT(*) AS Cardinality FROM customers; 
+SELECT COUNT(*) AS Cardinality FROM restaurants; 
+SELECT COUNT(*) AS Cardinality FROM menu_items; 
+SELECT COUNT(*) AS Cardinality FROM drivers; 
+SELECT COUNT(*) AS Cardinality FROM orders; 
+SELECT COUNT(*) AS Cardinality FROM order_items; 
+SELECT COUNT(*) AS Cardinality FROM reviews; 
